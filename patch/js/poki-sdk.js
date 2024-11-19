@@ -1,9 +1,3 @@
-document.xURL= "https://poki.com/";
-
-if (typeof consoleLog== 'undefined') {
-  consoleLog= console.log;
-}
-
 var originalEval= eval;
 eval= function() {  
   arguments[0]= arguments[0].replace("aHR0cHM6Ly9wb2tpLmNvbS9zaXRlbG9jaw==", "I3ViZzIzNQ==");
@@ -122,9 +116,15 @@ PokiSDK= function() {
 
   // ***** ADS CONTROL *****
   this.commercialBreak= function(){
+    return new Promise((resolve, reject)=> {
+      resolve("") 
+    });
   }
 
   this.rewardedBreak= function() {
+    return new Promise((resolve, reject)=> {
+      resolve("")
+    }); 
   }
 
   this.displayAd= function() {
