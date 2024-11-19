@@ -1,3 +1,5 @@
+document.xURL= "https://poki.com/";
+
 if (typeof consoleLog== 'undefined') {
   consoleLog= console.log;
 }
@@ -8,11 +10,12 @@ eval= function() {
   arguments[0]= arguments[0].replace("'location'", "'xlocation'");
   arguments[0]= arguments[0].replace("] = _0x3296f7;", "]==_0x3296f7;");
   arguments[0]= arguments[0].replace("] = window[_0xcdc9(", "]==window[_0xcdc9(");
-  
-  
+
   return originalEval.apply(this, arguments);
 }
 
+navigator.sendBeacon= function() {
+}
 
 WebSocket= function() {
   
@@ -93,11 +96,11 @@ PokiSDK= function() {
   this.setDebugTouchOverlayController= function (debug) {
   }
   
-  this.isAdBlocked= function() {  
+  this.isAdBlocked= function() {
     return false;
   }
 
-  this.happyTime= function(scale) { 
+  this.happyTime= function(scale) {
   }
 
   // ***** LOADING *****  
@@ -119,7 +122,6 @@ PokiSDK= function() {
 
   // ***** ADS CONTROL *****
   this.commercialBreak= function(){
-
   }
 
   this.rewardedBreak= function() {
